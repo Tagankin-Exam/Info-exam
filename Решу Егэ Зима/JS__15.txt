@@ -1,0 +1,29 @@
+let x = 3617 + 648 - 17;
+
+// система счисления
+const n = 6;
+
+// искомое число в системе n
+let k = 0;
+
+let zeroCount = 0;
+
+let i = 0;
+while (x > 0) {
+let remainder = x % n;
+
+if (remainder === 0) {
+zeroCount += 1
+}
+
+if (i > 0) {
+k += Math.pow(10, i) * remainder;
+} else {
+k = remainder;
+}
+
+x = Math.floor(x / n);
+i += 1;
+}
+
+console.log(zeroCount);
